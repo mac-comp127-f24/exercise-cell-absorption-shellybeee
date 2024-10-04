@@ -48,15 +48,32 @@ public class CellSimulation {
 
             for (Cell cell : cells) {
             cell.moveAround(canvasCenter);
-            cell.grow(0.02);
+            // cell.grow(0.02);
             }
+
+            handleCellInteraction();
 
             canvas.draw();
             canvas.pause(10);
         }
+     }
+
+    private void handleCellInteraction() {
+        // for i from 0 up to max cell index
+            // get cell at index i
+            // for j from i+1 up to max cell index
+                // get cell at index j
+                // make the two cells interact
+
+        for (int i = 0; i < cells.size(); i++) {
+            Cell cell0 = cells.get(i);
+            for (int j = i + 1; j < cells.size(); j++) {
+                Cell cell1 = cells.get(j);
+                cell1.interactWith(cell0);
+        
+            }
+
+        }
     }
-
-
-
     
 }
